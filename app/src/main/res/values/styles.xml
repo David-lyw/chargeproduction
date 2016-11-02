@@ -16,6 +16,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="radiobutton_menuitem_style">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
@@ -36,6 +37,7 @@
         <item name="android:gravity">center</item>
         <item name="android:clickable">true</item>
     </style>
+
     <style name="radiobutton_menuitem_style1">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
@@ -45,5 +47,14 @@
         <item name="android:textSize">11sp</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:padding">3dp</item>
+    </style>
+
+
+    <style name="common_divide_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.1dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:background">@color/color_eee</item>
     </style>
 </resources>

@@ -37,7 +37,7 @@ public class MainActivity_1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_1);
-        content= (FrameLayout) findViewById(R.id.content);
+        content = (FrameLayout) findViewById(R.id.content);
         bottom_layout = (RadioGroup) findViewById(R.id.bottom_layout);
         mFragmentManager = getFragmentManager();
         for (int i = 0; i < 3; i++) {
@@ -100,6 +100,13 @@ public class MainActivity_1 extends AppCompatActivity {
     }
 
     private void setTabSelection(int index) {
+        if (index == 0) {
+        }
+        if (index == 1) {
+        }
+        if (index == 2) {
+        }
+
         mFragmantIndex = index;
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         int size = mSurfaceParams.size();
