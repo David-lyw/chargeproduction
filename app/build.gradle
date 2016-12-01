@@ -35,7 +35,8 @@ android {
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
 
                         // apk_渠道名-版本号-版本名称-编译时间.apk
-                        def fileName = "apk_${variant.productFlavors[0].name}-${defaultConfig.versionCode}-${defaultConfig.versionName}-${releaseTime()}.apk"
+                        //def fileName = "apk_${variant.productFlavors[0].name}-${defaultConfig.versionCode}-${defaultConfig.versionName}-${releaseTime()}.apk"
+                        def fileName = "apk_${variant.productFlavors[0].name}-${defaultConfig.versionCode}-${defaultConfig.versionName}.apk"
                         output.outputFile = new File(outputFile.parent, fileName)
                     }
                 }
@@ -130,6 +131,8 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     //2013年Google I/O大会上推出:非常适合去进行数据量不大，但通信频繁的网络操作.:HttpURLConnection
     compile 'com.mcxiaoke.volley:library:1.0.19'
+
+    compile 'com.android.support:recyclerview-v7:23.1.1'
 
     // 编译extras目录下的ShimmerAndroid模块
     // compile project(':extras:ShimmerAndroid')

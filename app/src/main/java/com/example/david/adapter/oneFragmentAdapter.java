@@ -17,6 +17,7 @@ import java.util.List;
 public class oneFragmentAdapter extends BaseAdapter {
     public Context context;
     public List list;
+    //public TextView tv;
     public oneFragmentAdapter(Context context,List list){
         this.context=context;
         this.list=list;
@@ -47,11 +48,17 @@ public class oneFragmentAdapter extends BaseAdapter {
         }else{
             viewHolder= (ViewHolder) convertView.getTag();
         }
+        viewHolder.tv=(TextView)convertView.findViewById(R.id.tv);
+        viewHolder.tv.setText("我是在适配器中设置的数据。。。。。");
+
+
+
         return convertView;
     }
 
 
     class ViewHolder {
+        public TextView tv;
 
     }
 

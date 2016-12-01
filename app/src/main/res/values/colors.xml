@@ -12,7 +12,7 @@
 
 
 
-
+    <color name="transparent_background">#4d999999</color>
     <color name="color_ec">#ECECEC</color>
     <color name="color_0f">#0F0F0F</color>
 </resources>

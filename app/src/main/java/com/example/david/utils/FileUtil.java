@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
  */
 public class FileUtil {
     //此处应判断SD卡是否可用。
-    public static String SDPATH = Environment.getExternalStorageDirectory().getAbsolutePath();
+    public static String SDPATH = Environment.getExternalStorageDirectory()+"/chargeproduction/";
 
     /**
      * 将获取到的bm图片，以picName为名称，保存到指定(formats)目录下。

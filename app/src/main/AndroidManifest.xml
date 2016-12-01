@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <!--SD卡权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
@@ -45,9 +46,14 @@
         <activity
             android:name="com.example.david.test.DataTest_volley_Activity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity
-            android:name="com.example.david.function.GetPicActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name="com.example.david.function.ImageGridActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <!--选择照片，相机-->
+        <activity android:name="com.example.david.function.GetPicActivity" />
+        <activity android:name="com.example.david.function.ImageBrowseActivity" />
 
     </application>
 </manifest>

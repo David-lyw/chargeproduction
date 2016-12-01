@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentTabHost tabHost;
     private RadioGroup radioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         //tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator("标签4").setContent(new Intent(this,activity_tab_4.class)));
         //tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator("标签4").setContent(new Intent(activity_fragmenttabhost.this,activity_tab_4.class)));
-
 
 
         // FragmentTabHost 的监听器
