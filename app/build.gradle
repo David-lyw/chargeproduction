@@ -9,15 +9,42 @@ android {
     //关闭Android Studio的PNG合法性检查的
     //Dynamic properties?
 
+
+    //aapt配置
+    aaptOptions {
+        //不用压缩的文件
+        noCompress 'pak', 'dat', 'bin', 'notice'
+        //打包时候要忽略的文件
+        ignoreAssetsPattern "!.svn:!.git"
+        //--extra-packages是为资源文件设置别名：意思是通过该应用包名+R，com.android.test1.R和com.android.test2.R都可以访问到资源
+        additionalParameters '--extra-packages', 'com.android.test1','--extra-packages','com.android.test2'
+    }
+
     defaultConfig {
         applicationId "com.example.david.chargeproduction" // 应用的包名
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
     }
+
+
+    //签名配置
+    signingConfigs {
+        release {
+//            storeFile file("xxxxxxxxStore")
+//            storePassword "xxxxxxxx"
+//            keyAlias "timehut team"
+//            keyPassword "xxxxxxxx"
+
+
+
+        }
+    }
+
     buildTypes {
         release {
+            //runProguard true :废弃。
             // 是否进行混淆
             minifyEnabled false
             // Zipalign优化
@@ -26,7 +53,7 @@ android {
             shrinkResources true
             // 混淆文件的位置  前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
+            //proguardFile 'some-other-rules.txt'  配置单个文件这样
 
             //variant:变形
             applicationVariants.all { variant ->
@@ -42,13 +69,19 @@ android {
                 }
             }
         }
+        debug {
+
+            
+            zipAlignEnabled true
+        }
     }
 
     productFlavors {
-        chuaike {}
-//        qihu360 {} // 360手机助手
-//        yingyongbao {} // 腾讯应用宝
-//        wandoujia {} // 豌豆荚
+        chargeproduction {}
+          //chuaike {}
+        qihu360 {} // 360手机助手
+        yingyongbao {} // 腾讯应用宝
+        wandoujia {} // 豌豆荚
 
 //        baidu {} // 百度手机助手
 //        miui {} // 小米
@@ -94,11 +127,19 @@ android {
 
     // 移除lint检查的error
     lintOptions {
+        checkReleaseBuilds false
         abortOnError false
     }
 
     productFlavors.all {
         flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+
+
+
+    defaultConfig {
+        multiDexEnabled true //重复引用的多个libraries文件
     }
 }
 
@@ -114,7 +155,7 @@ retrolambda {
 
 dependencies {
     // 编译libs目录下的所有jar包
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.google.code.gson:gson:2.6.2'
@@ -131,12 +172,10 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     //2013年Google I/O大会上推出:非常适合去进行数据量不大，但通信频繁的网络操作.:HttpURLConnection
     compile 'com.mcxiaoke.volley:library:1.0.19'
-
     compile 'com.android.support:recyclerview-v7:23.1.1'
-
     // 编译extras目录下的ShimmerAndroid模块
     // compile project(':extras:ShimmerAndroid')
-
+    compile files('libs/libammsdk.jar')
 }
 //aaptOptions.cruncherEnabled = false
 //aaptOptions.useNewCruncher = false

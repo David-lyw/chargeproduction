@@ -118,7 +118,8 @@ public class MainActivity_1 extends AppCompatActivity {
         }
         if (mSurfaceParams.get(index).fragment == null) {
             mSurfaceParams.get(index).fragment = (Fragment) ReflectionUtil.generateObject(mSurfaceParams.get(index).clazz);
-            transaction.add(R.id.content, mSurfaceParams.get(index).fragment);
+           // transaction.add(R.id.content, mSurfaceParams.get(index).fragment);
+            transaction.replace(R.id.content, mSurfaceParams.get(index).fragment);//防止页面重叠。
         } else {
             transaction.show(mSurfaceParams.get(index).fragment);
         }
