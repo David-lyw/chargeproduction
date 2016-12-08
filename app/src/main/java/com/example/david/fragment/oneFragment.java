@@ -15,7 +15,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.david.adapter.oneFragmentAdapter;
+import com.example.david.app.Contants;
 import com.example.david.chargeproduction.R;
+import com.example.david.dialog.CommonDialog;
 import com.example.david.test.DataTest_retrofit_Activity;
 import com.example.david.test.DataTest_volley_Activity;
 import com.example.david.test.DataTest_xUtils_Activity;
@@ -101,6 +103,8 @@ public class oneFragment extends Fragment {
             intent.putExtra("value",et_faultName.getText().toString());
             startActivity(intent);
         });
+
+
     }
 
     @Override

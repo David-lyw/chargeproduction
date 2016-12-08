@@ -20,6 +20,7 @@
         android:text="DataTestActivity"
         android:visibility="visible" />
 
+
     <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
